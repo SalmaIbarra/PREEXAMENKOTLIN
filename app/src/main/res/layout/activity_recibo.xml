@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Recibo_Activity">
+
+    <TextView
+        android:id="@+id/lblNomina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CALCULO DE NOMINA"
+        android:textAlignment="center"
+        android:textSize="27dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lblUsuario" />
+
+
+    <TextView
+        android:id="@+id/lblUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usuario"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        app:layout_constraintTop_toBottomOf="@id/lblNomina"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="Numero Recibo"
+        android:textSize="20dp"
+        android:id="@+id/lblNumero"
+        app:layout_constraintTop_toBottomOf="@id/lblUsuario"
+
+        tools:ignore="MissingConstraints" />
+
+
+    <EditText
+        android:layout_width="30mm"
+        android:layout_height="wrap_content"
+        android:hint="Numero"
+        android:id="@+id/txtNumero"
+        android:inputType="number"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/lblUsuario"
+        app:layout_constraintStart_toEndOf="@+id/lblNumero"
+        ></EditText>
+
+
+    <TextView
+
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:textSize="20dp"
+        android:id="@+id/lblNombre"
+        app:layout_constraintTop_toBottomOf="@id/lblNumero"
+        android:layout_marginTop="15dp"
+        tools:ignore="MissingConstraints" />
+    <EditText
+        android:layout_width="30mm"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:id="@+id/txtNombre"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/txtNumero"
+        app:layout_constraintStart_toEndOf="@+id/lblNombre"
+        ></EditText>
+
+    <TextView
+
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Horas trabajadas"
+        android:textSize="20dp"
+        android:id="@+id/lblhoras"
+        app:layout_constraintTop_toBottomOf="@id/lblNombre"
+        android:layout_marginTop="30dp"
+        tools:ignore="MissingConstraints" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Horas trabajadas"
+        android:id="@+id/txtHoras"
+        android:inputType="numberDecimal"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/lblhoras"
+        ></EditText>
+    <TextView
+
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Horas Extras"
+        android:textSize="20dp"
+        android:id="@+id/lblHorasExtras"
+        app:layout_constraintTop_toBottomOf="@id/txtHoras"
+        android:layout_marginTop="9dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Horas extras"
+        android:id="@+id/txtHorasExtras"
+        android:inputType="numberDecimal"
+
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/lblHorasExtras"
+        ></EditText>
+
+    <TextView
+
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Puesto"
+        android:textSize="20dp"
+        android:id="@+id/lblPuesto"
+        app:layout_constraintTop_toBottomOf="@id/txtHorasExtras"
+        android:layout_marginTop="8dp"
+        tools:ignore="MissingConstraints" />
+
+
+
+    <RadioGroup
+        android:id="@+id/rdPuestos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/lblPuesto"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        tools:ignore="MissingConstraints"
+        >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/rbAuxiliar"
+            android:text="Auxiliar">
+
+        </RadioButton>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/rbAlbañil"
+            android:text="Albañil">
+
+        </RadioButton>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/rbIngObra"
+            android:text="Ing.Obra">
+
+        </RadioButton>
+    </RadioGroup>
+
+    <TextView
+
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Subtotal"
+        android:textSize="20dp"
+        android:id="@+id/lblSubtotal"
+        app:layout_constraintTop_toBottomOf="@id/rdPuestos"
+        android:layout_marginTop="10dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:layout_width="30mm"
+        android:layout_height="wrap_content"
+        android:hint="SubTotal"
+
+        android:id="@+id/txtSubTotal"
+        android:layout_marginTop="0dp"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/rdPuestos"
+        app:layout_constraintStart_toEndOf="@+id/lblSubtotal"
+        android:inputType="none"
+        ></EditText>
+    <TextView
+
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Impuesto:"
+        android:textSize="20dp"
+        android:id="@+id/lblImpuesto"
+        app:layout_constraintTop_toBottomOf="@id/txtSubTotal"
+        android:layout_marginTop="10dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:layout_width="30mm"
+        android:layout_height="wrap_content"
+        android:hint="Impuestos"
+        android:id="@+id/txtImpuestos"
+        android:layout_marginTop="0dp"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/txtSubTotal"
+        app:layout_constraintStart_toEndOf="@+id/lblImpuesto"
+        android:inputType="none"
+
+        ></EditText>
+
+
+    <TextView
+
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="Total Pagar:"
+        android:textSize="20dp"
+        android:id="@+id/lbltotalPagar"
+        app:layout_constraintTop_toBottomOf="@id/lblImpuesto"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:layout_width="30mm"
+        android:layout_height="wrap_content"
+        android:hint="Total"
+        android:id="@+id/txttotalPagar"
+        android:layout_marginTop="0dp"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/txtImpuestos"
+        app:layout_constraintStart_toEndOf="@+id/lbltotalPagar"
+        android:inputType="none"
+        ></EditText>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCalcular"
+
+        android:text="CALCULAR"
+        app:layout_constraintTop_toBottomOf="@id/txttotalPagar">
+
+    </Button>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLimpiar"
+        android:text="LIMPIAR"
+        app:layout_constraintTop_toBottomOf="@id/btnCalcular">
+
+    </Button>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnRegresar"
+        android:text="REGRESAR"
+        app:layout_constraintTop_toBottomOf="@id/btnLimpiar">
+
+    </Button>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
