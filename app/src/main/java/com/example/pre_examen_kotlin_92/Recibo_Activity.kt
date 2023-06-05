@@ -11,8 +11,6 @@ import androidx.appcompat.app.AlertDialog
 import java.text.DecimalFormat
 
 class Recibo_Activity : AppCompatActivity() {
-
-
     private lateinit var btnGenerar: Button
     private lateinit var btnLimpiar: Button
     private lateinit var btnRegresar: Button
@@ -54,8 +52,8 @@ class Recibo_Activity : AppCompatActivity() {
                 btnGenerar()
 
             }
-        }
 
+        }
 
         btnLimpiar.setOnClickListener {
             btnLimpiar()
@@ -93,14 +91,21 @@ class Recibo_Activity : AppCompatActivity() {
 
     private fun btnGenerar() {
         var puesto = 0
+
+
         reciboNomina.horasTrabajadas = txtHorasTrabajadas.text.toString().toDouble()
         reciboNomina.horasExtras = txtHorasExtras.text.toString().toDouble()
+
+
         puesto = when {
             rbAuxiliar.isChecked -> 1
             rbAlbañil.isChecked -> 2
             rbIngObra.isChecked -> 3
             else -> 0
         }
+
+
+
         reciboNomina.puesto = puesto
         val subtotal = reciboNomina.calcularSubtotal()
         txtSubtotal.setText(decimalFormat.format(subtotal))

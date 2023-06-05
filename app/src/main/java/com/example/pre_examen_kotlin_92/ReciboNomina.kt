@@ -4,14 +4,11 @@ class ReciboNomina {
 
 
     var numRecibo: Int = 0
-    var nombre: String
+    lateinit var nombre: String
     var horasTrabajadas: Double = 0.0
     var horasExtras: Double = 0.0
     var puesto: Int = 0
     var impuestoPor: Double = 0.0
-
-
-
 
     constructor(
         numRecibo: Int,
@@ -31,18 +28,19 @@ class ReciboNomina {
 
 
     fun calcularSubtotal(): Float {
-        var resultado = 0.0
-        val pagoBase = 200.0
-        var pagoPorHoras = 0.0
+        var resultado: Double = 0.0
+        val pagoBase: Double = 200.0
+        var pagoPorHoras: Double = 0.0
 
-        when (puesto) {
-            1 -> pagoPorHoras = pagoBase + (pagoBase * 0.2)
-            2 -> pagoPorHoras = pagoBase + (pagoBase * 0.5)
-            3 -> pagoPorHoras = pagoBase + (pagoBase * 1.0)
+        if (puesto == 1) {
+            pagoPorHoras = pagoBase + (pagoBase * 0.2)
+        } else if (puesto == 2) {
+            pagoPorHoras = pagoBase + (pagoBase * 0.5)
+        } else if (puesto== 3) {
+            pagoPorHoras = pagoBase + (pagoBase * 1.0)
         }
 
-        resultado = (pagoBase * horasTrabajadas) + (horasExtras * pagoPorHoras * 2)
-
+        resultado = horasTrabajadas * pagoPorHoras + horasTrabajadas * pagoPorHoras * 2
         return resultado.toFloat()
     }
 
@@ -55,6 +53,9 @@ class ReciboNomina {
         val pagar = calcularSubtotal() - calcularImpuesto()
         return pagar.toFloat()
     }
+
+
+
 
 
 
